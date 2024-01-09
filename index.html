@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My dog, Lemmy</title>
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        background: linear-gradient(
+          96.2deg,
+          rgb(255, 230, 112) 10.4%,
+          rgb(255, 100, 100) 43.8%,
+          rgb(0, 93, 219) 105.8%
+        );
+      }
+      .dark {
+        background: linear-gradient(
+          to right,
+          rgb(173, 83, 137),
+          rgb(60, 16, 83)
+        );
+      }
+      .dark .container {
+        background: #401255;
+        color: gray;
+      }
+      .dark a {
+        color: #9c6192;
+      }
+      .dark .theme-button {
+        background: gray;
+        color: black;
+        border: 1.5px solid black;
+      }
+      .dark .theme-button:hover {
+        background: #9c6192;
+        color: white;
+        border: 1.5px solid white;
+      }
+      .container {
+        text-align: center;
+        width: 600px;
+        background: white;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px;
+        border-radius: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .love-button {
+        background: #9c6192;
+        color: white;
+        border: 1.5px solid black;
+        transition: all 200ms ease-in-out;
+      }
+      .love-button:hover {
+        background: #ffd16f;
+        color: #9c6192;
+        border: 1.5px solid #9c6192;
+        cursor: pointer;
+      }
+      .theme-button {
+        background: black;
+        color: white;
+        border: 1.5px solid white;
+      }
+      .theme-button:hover {
+        background: gray;
+        color: black;
+        border: 1.5px solid black;
+        cursor: pointer;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+      .intro-lemmy-picture {
+        transition: all 200ms ease-in-out;
+      }
+      .intro-lemmy-picture:hover {
+        transform: scale(1.2);
+        filter: contrast(120%);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15px;
+        margin: 15px 0;
+      }
+      .grid img {
+        transition: all 200ms ease-in-out;
+      }
+      .grid img:hover {
+        transform: scale(1.5);
+      }
+      footer {
+        text-align: center;
+        margin: 15px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-button">Change theme</button>
+    <div class="container">
+      <h1>Lemmy</h1>
+      <h2>💟💖my little love bug💖💟</h2>
+
+      <img
+        src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/656/original/Lemmy_2.jpg?1699667573"
+        alt=""
+        class="intro-lemmy-picture"
+      />
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/657/original/Lemmy_3.jpg?1699667581"
+          alt=""
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/660/original/Lemmy_6.jpg?1699667609"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/661/original/Lemmy_7.jpg?1699667625"
+          alt=""
+        /><img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/658/original/Lemmy_4.jpg?1699667589"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/659/original/Lemmy_5.jpg?1699667598"
+          alt=""
+        /><img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/103/663/original/Lemmy_1_crop.jpg?1699673937"
+          alt=""
+        />
+      </div>
+      <p>
+        My favorite thing to do is hang out with my dog, Lemmy. She is about 35
+        pounds and just turned 8 years old. She's very into cuddling and likes
+        to be under the covers. She is a mixed-breed dog and her DNA test
+        results showed that she is part Boxer, Border Collie, Beagle and Belgian
+        Malinois. She is so goofy and makes me so happy!
+      </p>
+      <br />
+      <a href="https://www.accgov.com/257/Available-Pets" target="_blank">
+        Athens-Clarke County Animal Shelter- Available Pets 🐶😸</a
+      ><br />
+      <button class="love-button">Send Lemmy some love!</button><br />
+    </div>
+    <footer>Coded by Caitlin Downs✌️</footer>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+        body.classList.toggle("dark");
+      }
+
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+
+      function sendLove() {
+        let name = prompt("What is your name?");
+        let love = prompt("On a scale of 1 to 10, how much do you love Lemmy?");
+        if (love >= 10) {
+          alert(
+            `That's the right amount of love! 💖💖💖 Lemmy loves you too, ${name}!`
+          );
+        } else if (love < 10 && love > 5) {
+          alert(
+            `That's a decent amount of love, ${name}. I'll pass that along. 😊`
+          );
+        } else {
+          alert(
+            `${name}, you clearly don't understand how precious the little baby is 😒, but I'll give her your love anyway.`
+          );
+        }
+      }
+
+      let loveButton = document.querySelector(".love-button");
+      loveButton.addEventListener("click", sendLove);
+    </script>
+  </body>
+</html>
